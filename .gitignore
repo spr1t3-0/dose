@@ -1,0 +1,3 @@
+writable/*
+vendor/*
+app/config/default.php
