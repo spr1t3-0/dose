@@ -34,10 +34,10 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Substance</th>
-                      <th scope="col">Dose</th>
-                      <th scope="col">Dosed at</th>
-                      <th scope="col">Actions</th>
+                      <th scope="col">substance</th>
+                      <th scope="col">dose</th>
+                      <th scope="col">dosed at</th>
+                      <th scope="col">actions</th>
                     </tr>
                   </thead>
 
