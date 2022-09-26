@@ -34,7 +34,7 @@
                                     <p>I took</p>
                                 </div>
                                 <div class="col col-md-2"></div>
-                                <form action="/add" method="post" class="">
+                                <form action="/add" method="POST">
                                     <div class="row g-3">
                                         <div class="form-group col-auto">
                                             <label for="substance">dose</label>
@@ -43,7 +43,7 @@
                                         </div>
                                         <div class="form-group col-auto">
                                             <label for="substance">unit (of)</label>
-                                            <input type="text" class="form-control" id="substance" name="substance"
+                                            <input type="text" class="form-control" id="unit" name="unit"
                                                 placeholder="ug">
                                         </div>
                                         <div class="form-group col-auto">
@@ -53,13 +53,17 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="form-group">
-                                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
-                                                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                </div>
+                                        
+                                        <div class="form-group col-auto">
+                                                <label for="datetime">At</label>
+                                                <input type="datetime-local" class="form-control" name="datetime" id="datetime">
                                             </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                        </div>
+                                        
                                     </div>
                                 </form>
 

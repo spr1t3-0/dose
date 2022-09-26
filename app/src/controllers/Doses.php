@@ -57,13 +57,15 @@ Class Doses extends Controller {
   **/
   public function add():void {
     if($this->User->isLoggedIn()) {
-      if(!isset($_POST["substance"]) || !isset($_POST["dose"]) || !isset($_POST["unit"]) || !isset($_POST["dosed_at"])){die('400 - bad request');}
+      if(!isset($_POST["substance"]) || !isset($_POST["dose"]) || !isset($_POST["unit"]) || !isset($_POST["datetime"])){die('400 - bad request');}
 
-      $uid = $this->User->current["id"];
+      $uid = $this->User->current()["id"];
       $substance = $_POST["substance"];
       $dose = $_POST["dose"];
       $unit = $_POST["unit"];
-      $dosed_at = $_POST["dosed_at"];
+    
+      $dosed_at = date('Y-m-d H:i:s', strtotime($_POST['datetime']));
+
 
       $this->Dose->add($uid, $substance, $dose, $unit, $dosed_at);
       header("Location: /");

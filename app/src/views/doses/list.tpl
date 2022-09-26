@@ -32,7 +32,6 @@
                 <table class="table table-dark">
 
                   <thead>
-
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Substance</th>
@@ -40,9 +39,29 @@
                       <th scope="col">Dosed at</th>
                       <th scope="col">Actions</th>
                     </tr>
-
-
                   </thead>
+
+                  <tbody>
+                    {{foreach from=$data item=$i}}
+                    <tr>
+                      <th scope="row">{{$i.id}}</th>
+                      <td>{{$i.substance}}</td>
+                      <td>{{$i.dose}} {{$i.unit}}</td>
+                      <td>{{$i.dosed_at|date_format:"%d.%m.%Y, %H:%M"}}</td>
+                      <td> 
+                        <a href="/edit/{{$i.id}}">
+                         <button type="button" class="btn btn-success"><i class="fas fa-pen-to-square"></i></button>
+                        </a> 
+                        <a href="/delete/{{$i.id}}">
+                         <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                        </a>
+                       </td>
+                    </tr>
+                    
+                 
+                  
+                    {{/foreach}}
+                  </tbody>
 
                 </table>
               </div>

@@ -19,7 +19,7 @@ public function __construct() {
 *
 * @return void
 **/
-public function create(int $uid, string $substance, int $dose, string $unit, string $dosed_at):void {
+public function add(int $uid, string $substance, int $dose, string $unit, string $dosed_at):void {
   $this->conn->queryWithParams('INSERT INTO doses (uid, substance, dose, unit, dosed_at) VALUES (:uid, :substance, :dose, :unit, :dosed_at)', ["uid" => $uid, "substance" => $substance, "dose" => $dose, "unit" => $unit, "dosed_at" => $dosed_at]);
 }
 
@@ -54,7 +54,7 @@ public function getLastFromUser(int $uid, int $limit = 10):array|null {
 * @return void
 **/
 public function delete(int $id):void {
-  $this->conn->queryWithParams("DELETE FROM dose WHERE id = :id");
+  $this->conn->queryWithParams("DELETE FROM doses WHERE id = :id", ["id" => $id]);
 }
 }
  ?>

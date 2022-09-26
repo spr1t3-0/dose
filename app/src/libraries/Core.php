@@ -29,7 +29,7 @@ class Core extends Controller {
           $this->call('Doses', 'add');
         });
 
-        $this->Router->get('/delete/\d+', function(int $id) {
+        $this->Router->get('/delete/{id}', function(int $id) {
           $this->call('Doses', 'delete', ["id" => $id]);
         });
 
