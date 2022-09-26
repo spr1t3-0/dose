@@ -1,3 +1,7 @@
 writable/*
 vendor/*
 app/config/default.php
+
+# ignore the deployment files on john.bitvibe.click
+public/deploy.php
+public/deploy-config.php
